@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Playful Chess — Web UI</title>
+  <link rel="stylesheet" href="style.css">
+  <meta name="description" content="Playful Chess - interactive web UI for local 2-player chess" />
+</head>
+<body>
+  <header class="topbar">
+    <h1>Playful Chess</h1>
+    <div class="controls">
+      <button id="btnNew">New Game</button>
+      <button id="btnUndo">Undo</button>
+      <button id="btnFlip">Flip</button>
+      <label class="theme">Orientation
+        <select id="orientation">
+          <option value="white">White bottom</option>
+          <option value="black">Black bottom</option>
+        </select>
+      </label>
+    </div>
+  </header>
+
+  <main class="main">
+    <section class="board-wrap">
+      <div id="board" class="board" aria-label="Chess board"></div>
+    </section>
+    <aside class="sidebar">
+      <div class="info">
+        <div id="turn">Turn: <strong id="turnPlayer">White</strong></div>
+        <div id="status" class="status"></div>
+      </div>
+      <div class="history">
+        <h2>Moves</h2>
+        <ol id="movesList" class="moves"></ol>
+      </div>
+      <div class="credits">
+        <p>Hotseat play. Pawn promotes to queen. No castling or en-passant in this playful demo.</p>
+      </div>
+    </aside>
+  </main>
+
+  <div id="promotion" class="modal hidden">
+    <div class="modal-inner">
+      <p>Promote pawn to:</p>
+      <div class="promo-options">
+        <button data-piece="Q">Queen</button>
+      </div>
+    </div>
+  </div>
+
+  <footer class="foot">Open this file in a browser or run a local server (<code>python -m http.server</code>) and visit <code>http://localhost:8000/web/</code></footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
